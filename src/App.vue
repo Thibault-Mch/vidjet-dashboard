@@ -1,32 +1,83 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div class="navbar-and-cards">
+    <Navbar />
+    <div id="app">
+      <div class="container">
+        <h1 class="settings">Settings</h1>
+        <div id="nav">
+          <router-link class="link account" to="/account">Account</router-link>
+          <router-link class="link account" to="/integration"
+            >Integration</router-link
+          >
+          <router-link class="link account" to="/billing">Billing</router-link>
+        </div>
+        <router-view />
+      </div>
     </div>
-    <router-view />
   </div>
 </template>
 
+<script>
+import Navbar from "./components/Navbar";
+
+export default {
+  components: {
+    Navbar
+  }
+};
+</script>
+
 <style>
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+.navbar-and-cards {
+  display: grid;
+  grid-template-columns: 0.3fr 2.7fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0px 16px;
+  grid-template-areas: ". . .";
+}
+
+html,
+body,
+p {
+  font-family: "Roboto", sans-serif;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  width: 1040px;
+}
+.settings {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #585858;
 }
 
 #nav {
-  padding: 30px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.link.account {
+  font-size: 20px;
+  line-height: 45px;
+  display: inline-block;
+  width: 173px !important;
+  height: 45px !important;
+  background: #ffffff;
+  box-shadow: 2px 2px 15px rgba(141, 22, 193, 0.25);
+  border-radius: 30px;
+  margin: 0 5rem;
+  text-decoration: none !important;
+  text-align: center;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.router-link-active.account {
+  background: #8d16c1;
+  color: #ffffff;
 }
 </style>
