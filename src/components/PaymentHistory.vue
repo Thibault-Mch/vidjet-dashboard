@@ -56,25 +56,17 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      invoices: {}
-    };
-  },
-  created() {
-    fetch("http://localhost:3000/invoices")
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.invoices = data;
-      });
+  computed: {
+    ...mapState({invoices: 'invoices'})
   }
 };
 </script>
 
 <style scoped>
+/*scrollbar with overflow*/
 .payment-history {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;

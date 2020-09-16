@@ -4,6 +4,7 @@
       <img src="../assets/user-info.svg" alt="user-info-icon" />
       <h3>User information</h3>
     </div>
+    <!-- display green check or red cross based on empty fields -->
     <div class="check-icon">
       <section v-if="user.firstname && user.lastname && user.email">
         <img src="../assets/green-check.svg" alt="green-check" />
@@ -12,45 +13,53 @@
         <img src="../assets/red-cross.svg" alt="red-cross" />
       </section>
     </div>
+
     <div class="grid">
       <div class="flex-column">
         <p>First name:</p>
         <p>Last name:</p>
         <p>Work email:</p>
       </div>
-
+<!-- input fields -->
       <div class="flex-column">
         <input
-          type="text"
-          v-model="user.firstname"
-          :placeholder="user.firstname"
+        type="text"
+        v-model="user.firstname"
+        :placeholder="user.firstname"
+        v-on:change="editUser"
         />
+
         <input
-          type="text"
-          v-model="user.lastname"
-          :placeholder="user.lastname"
+        type="text"
+        v-model="user.lastname"
+        :placeholder="user.lastname"
+        v-on:change="editUser"
         />
-        <input type="text" v-model="user.email" :placeholder="user.email" />
+
+        <input
+        type="text"
+        v-model="user.email"
+        :placeholder="user.email"
+        v-on:change="editUser"
+        />
+
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      user: {}
-    };
+  computed: {
+    ...mapState({user: 'user'})
   },
-  created() {
-    fetch("http://localhost:3000/user")
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.user = data;
-      });
+
+  methods: {
+    async editUser() {
+      await this.$store.dispatch("editUser", this.user);
+    }
   }
 };
 </script>
@@ -91,7 +100,7 @@ p {
 input {
   font-size: 16px;
   color: black;
-  margin: 6.5px 0.5rem;
+  margin: 5.8px 0.5rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }

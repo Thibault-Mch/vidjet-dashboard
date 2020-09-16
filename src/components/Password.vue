@@ -11,8 +11,8 @@
           <label for="new-password">New password</label>
         </div>
         <div class="flex-column">
-          <input type="text" />
-          <input type="text" />
+          <input type="text" required />
+          <input type="text" required />
         </div>
       </div>
       <input type="submit" value="Update password" />

@@ -1,11 +1,14 @@
 <template>
+  <!-- grid with two small grid on the left and a bigger one on the righ -->
   <div class="billing grid-container">
     <PaymentHistory />
+    <!-- big card on the right -->
     <div class="big-card">
       <Invoice />
     </div>
     <div class="credit-card">
       <CreditCard />
+      <!-- modal appear on billing tab -->
       <button class="button-pen" @click="showModal = true">
         <img src="../assets/modal.svg" alt="usage-icon" class="pen-icon" />
       </button>
@@ -19,9 +22,10 @@
     </transition>
     <transition name="slide" appear>
       <div class="modal" v-if="showModal">
+        <!-- modal disapear on back or on save if all fields are filled -->
         <form @submit="showModal = false">
           <h1>Add a new credit card</h1>
-          <div class="name">
+          <div class="cardholder-name">
             <p>Cardholder name</p>
             <input type="text" required />
           </div>
@@ -71,6 +75,49 @@ export default {
   position: relative;
   width: 575px;
 }
+.button-pen {
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+}
+.invoice {
+    width: 575px;
+  }
+
+/*responsive*/
+@media (min-width: 800px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 0.7fr;
+    grid-gap: 16px 16px;
+    grid-template-areas:
+    ". big-card"
+    ". big-card";
+  }
+  .big-card {
+    grid-area: big-card;
+  }
+  .invoice {
+    width: 100%;
+  }
+}
+
 
 /*Modal styling*/
 .buttons {
@@ -78,6 +125,7 @@ export default {
   justify-content: space-around;
 }
 
+/*save button*/
 input[type="submit"] {
   appearance: none;
   outline: none;
@@ -91,11 +139,11 @@ input[type="submit"] {
   height: 29.5px;
 }
 
-.name {
+.cardholder-name {
   display: flex;
 }
 
-.name input {
+.cardholder-name input {
   margin-top: 12px;
   margin-left: 1rem;
   width: 63%;
@@ -137,21 +185,6 @@ input[type="submit"] {
   border-bottom: 1px solid #585858;
 }
 
-.button-pen {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  background: #ffffff;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 5px;
-  padding: 0.5rem 0.5rem 0.3rem 0.5rem;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
 .modal-overlay {
   position: absolute;
   top: 0;
@@ -174,7 +207,7 @@ input[type="submit"] {
   background-color: #fff;
   border-radius: 16px;
 
-  padding: 0 1rem 1rem 1rem;
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 h1 {
@@ -228,35 +261,6 @@ input {
   padding: 0.5rem 1rem;
 }
 
-/* grid */
-/*.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 0.7fr;
-  grid-gap: 16px 16px;
-  grid-template-areas:
-    ". big-card"
-    ". big-card";
-}*/
 
-/*@media (min-width: 800px) {*/
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 0.7fr;
-  grid-gap: 16px 16px;
-  grid-template-areas:
-    ". big-card"
-    ". big-card";
-}
-.big-card {
-  grid-area: big-card;
-}
-/*  }*/
 
-/*.grid-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-};*/
 </style>

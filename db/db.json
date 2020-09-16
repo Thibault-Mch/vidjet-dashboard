@@ -1,77 +1,74 @@
-
-
 {
-   "site": {
-      "websiteUrl": "mywebsite.com",
-      "companyName": "",
-      "address": " Darlington Street, 1345, San-Francisco",
-      "siteId": "7777777"
-   },
-   "user": {
-      "firstname": "Jack",
-      "lastname": "Reacher",
-      "email": "jack@gmail.com"
-   },
-   "usage": {
-      "campaigns": 1,
-      "impressions": 340,
-      "maxImpressions": 500
-   },
-   "creditCards": {
-      "siteId": "7777777",
-      "cards": [
-         {
-            "lastFourDigit": "4321",
-            "defaultCard": true,
-            "type": "Mastercard",
-            "expirationDate": "05/28"
-         }
-      ]
-   },
-   "invoices": [
+  "site": {
+    "websiteUrl": "mycompany.com",
+    "companyName": "Vidjet",
+    "address": "",
+    "siteId": "7777777"
+  },
+  "user": {
+    "firstname": "Baptits",
+    "lastname": "Nicolas",
+    "email": "arriba"
+  },
+  "usage": {
+    "campaigns": 1,
+    "impressions": 340,
+    "maxImpressions": 500
+  },
+  "creditCards": {
+    "siteId": "7777777",
+    "cards": [
       {
-         "_id": "",
-         "status": 2,
-         "amount": 29,
-         "creationDate": "2020-08-11T07:40:53.792Z",
-         "siteId": "7777777"
-      },
-      {
-         "_id": "",
-         "status": 0,
-         "amount": 29,
-         "creationDate": "2020-09-11T07:40:53.792Z",
-         "siteId": "7777777"
-      },
-          {
-         "_id": "",
-         "status": 0,
-         "amount": 29,
-         "creationDate": "2020-09-11T07:40:53.792Z",
-         "siteId": "7777777"
-      },
-          {
-         "_id": "",
-         "status": 0,
-         "amount": 29,
-         "creationDate": "2020-09-11T07:40:53.792Z",
-         "siteId": "7777777"
-      },
-          {
-         "_id": "",
-         "status": 0,
-         "amount": 29,
-         "creationDate": "2020-09-11T07:40:53.792Z",
-         "siteId": "7777777"
-      },
-      {
-         "_id": "",
-         "status": 1,
-         "amount": 29,
-         "creationDate": "2020-10-11T07:40:53.792Z",
-         "paymentDate": "2020-10-12T12:40:53.792Z",
-         "siteId": "7777777"
+        "lastFourDigit": "4321",
+        "defaultCard": true,
+        "type": "Mastercard",
+        "expirationDate": "05/28"
       }
-   ]
+    ]
+  },
+  "invoices": [
+    {
+      "_id": "",
+      "status": 2,
+      "amount": 29,
+      "creationDate": "2020-08-11T07:40:53.792Z",
+      "siteId": "7777777"
+    },
+    {
+      "_id": "",
+      "status": 0,
+      "amount": 29,
+      "creationDate": "2020-09-11T07:40:53.792Z",
+      "siteId": "7777777"
+    },
+    {
+      "_id": "",
+      "status": 0,
+      "amount": 29,
+      "creationDate": "2020-09-11T07:40:53.792Z",
+      "siteId": "7777777"
+    },
+    {
+      "_id": "",
+      "status": 0,
+      "amount": 29,
+      "creationDate": "2020-09-11T07:40:53.792Z",
+      "siteId": "7777777"
+    },
+    {
+      "_id": "",
+      "status": 0,
+      "amount": 29,
+      "creationDate": "2020-09-11T07:40:53.792Z",
+      "siteId": "7777777"
+    },
+    {
+      "_id": "",
+      "status": 1,
+      "amount": 29,
+      "creationDate": "2020-10-11T07:40:53.792Z",
+      "paymentDate": "2020-10-12T12:40:53.792Z",
+      "siteId": "7777777"
+    }
+  ]
 }
-

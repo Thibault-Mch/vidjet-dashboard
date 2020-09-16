@@ -6,9 +6,7 @@
         <h1 class="settings">Settings</h1>
         <div id="nav">
           <router-link class="link account" to="/account">Account</router-link>
-          <router-link class="link account" to="/integration"
-            >Integration</router-link
-          >
+          <router-link class="link account" to="/integration">Integration</router-link>
           <router-link class="link account" to="/billing">Billing</router-link>
         </div>
         <router-view />
@@ -23,12 +21,19 @@ import Navbar from "./components/Navbar";
 export default {
   components: {
     Navbar
+  },
+  mounted() {
+    this.$store.dispatch('loadUser');
+    this.$store.dispatch('loadSite');
+    this.$store.dispatch('loadUsage');
+    this.$store.dispatch('loadInvoices');
+    this.$store.dispatch('loadCreditCards');
   }
 };
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .navbar-and-cards {
   display: grid;
@@ -40,12 +45,13 @@ export default {
 
 html,
 body,
-p {
-  font-family: "Roboto", sans-serif;
+p,
+input {
+  font-family: "Montserrat", sans-serif;
 }
 
 #app {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .container {
   width: 1040px;

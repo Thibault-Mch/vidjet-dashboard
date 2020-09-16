@@ -22,20 +22,11 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      creditCards: {}
-    };
-  },
-  created() {
-    fetch("http://localhost:3000/creditCards")
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.creditCards = data;
-      });
+  computed: {
+    ...mapState({creditCards: 'creditCards'})
   }
 };
 </script>

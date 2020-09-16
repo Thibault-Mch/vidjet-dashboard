@@ -1,9 +1,11 @@
 <template>
   <div class="site-info">
+
     <div class="icon-site">
       <img src="../assets/company.svg" alt="company-icon" />
       <h3>Company information</h3>
     </div>
+    <!-- display green check or red cross based on empty fields -->
     <div class="check-icon">
       <section v-if="site.websiteUrl && site.companyName && site.address">
         <img src="../assets/green-check.svg" alt="green-check" />
@@ -20,45 +22,47 @@
       </div>
       <div class="flex-column">
         <input
-          type="text"
-          v-model="site.websiteUrl"
-          :placeholder="site.websiteUrl"
+        type="text"
+        v-model="site.websiteUrl"
+        :placeholder="site.websiteUrl"
+        v-on:change="editSite"
         />
         <input
-          type="text"
-          v-model="site.companyName"
-          :placeholder="site.companyName"
+        type="text"
+        v-model="site.companyName"
+        :placeholder="site.companyName"
+        v-on:change="editSite"
         />
         <input
-          type="text"
-          v-model="site.address"
-          :placeholder="site.address.substring(0, 30)"
+        type="text"
+        v-model="site.address"
+        :placeholder="site.address.substring(0, 30)"
+        v-on:change="editSite"
         />
       </div>
     </div>
-  </div>
+</div>
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      site: {}
-    };
+
+  computed: {
+    ...mapState({site: 'site'})
   },
-  created() {
-    fetch("http://localhost:3000/site")
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.site = data;
-      });
+
+  methods: {
+    async editSite() {
+      await this.$store.dispatch("editSite", this.site);
+    }
   }
 };
 </script>
 
 <style scoped>
+/*card design*/
 .site-info {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
@@ -81,6 +85,7 @@ p {
   margin-top: 0px;
   margin-left: 2rem;
 }
+/*card title and icon aligned*/
 .icon-site {
   display: flex;
   margin-left: 1rem;
@@ -93,11 +98,11 @@ p {
 input {
   font-size: 16px;
   color: black;
-  margin: 6.5px 0.5rem;
+  margin: 5.8px 0.5rem;
   border: none;
   border-bottom: 1px solid #c4c4c4;
 }
-
+/*so 1st input aligned*/
 input:nth-child(1) {
   margin-top: 0;
 }
@@ -111,3 +116,4 @@ input:nth-child(1) {
   display: flex;
 }
 </style>
+

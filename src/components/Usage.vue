@@ -18,7 +18,7 @@
     <div class="grid">
       <div class="flex-column">
         <p>Campaigns</p>
-        <p>Impressions</p>
+        <p class="impressions">Impressions</p>
       </div>
 
       <div class="flex-column">
@@ -54,20 +54,11 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  data() {
-    return {
-      usage: {}
-    };
-  },
-  created() {
-    fetch("http://localhost:3000/usage")
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.usage = data;
-      });
+  computed: {
+    ...mapState({usage: 'usage'})
   }
 };
 </script>
@@ -92,13 +83,16 @@ export default {
   right: 1rem;
 }
 
-p {
-  margin-top: 0px;
+.grid p {
+  margin-top: 0;
   margin-left: 2rem;
+}
+.impressions {
+  padding-top: 0.5rem !important;
 }
 
 p:nth-child(-n + 2) {
-  padding: 5px 0;
+  padding-top: 5px;
 }
 
 .icon-site {
@@ -136,6 +130,7 @@ span {
   background-color: #fff;
   border-radius: 10px;
   margin-left: 1rem;
+  margin-top: 3px
 }
 
 #campaignsBarFull {
