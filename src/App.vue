@@ -82,8 +82,45 @@ input {
   text-decoration: none !important;
   text-align: center;
 }
+
+.link.account:hover {
+  background-color: #e47efd;
+  color: white;
+  border-radius: 15px;
+}
+
 .router-link-active.account {
   background: #8d16c1;
   color: #ffffff;
 }
+
+/*responsiveness*/
+
+
+@media (max-width: 576px) {
+
+  #app {
+    margin-left: 10%;
+  }
+
+  .link.account {
+    font-size: 12px;
+    line-height: 22px;
+    width: 90px !important;
+    height: 25px !important;
+    margin: 0 auto;
+
+  }
+  #nav {
+    width: 300px;
+    margin-bottom: 2rem;
+    display: flex;
+    margin-left: -8px;
+}
+  .container {
+    width: 350px;
+  }
+}
+
+
 </style>

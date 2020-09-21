@@ -15,7 +15,7 @@
       </section>
     </div>
 
-    <div class="grid">
+    <div class="flex">
       <div class="flex-column">
         <p>Campaigns</p>
         <p class="impressions">Impressions</p>
@@ -29,7 +29,7 @@
               :style="{ width: (usage.usage.campaigns / 3) * 100 + '%' }"
             ></div>
           </div>
-          <p class="indication">
+          <p class="indication first">
             {{ usage.usage.campaigns }} out of 3 included in your plan
           </p>
         </div>
@@ -83,7 +83,7 @@ export default {
   right: 1rem;
 }
 
-.grid p {
+.flex p {
   margin-top: 0;
   margin-left: 2rem;
 }
@@ -104,21 +104,12 @@ p:nth-child(-n + 2) {
   padding-left: 1.5rem;
 }
 
-span {
-  color: black;
-  padding-left: 1rem;
-}
-
-.subheadline {
-  border: 1px solid #c4c4c4;
-}
-
 .flex-column {
   display: flex;
   flex-direction: column;
 }
 
-.grid {
+.flex {
   display: flex;
   padding: 1rem 0;
 }
@@ -130,7 +121,7 @@ span {
   background-color: #fff;
   border-radius: 10px;
   margin-left: 1rem;
-  margin-top: 3px
+  margin-top: 3px;
 }
 
 #campaignsBarFull {
@@ -153,4 +144,57 @@ span {
   color: #c4c4c4;
   padding-top: 4px;
 }
+
+/*responsiveness*/
+@media (max-width: 576px) {
+  .site-info {
+    width: 300px;
+    padding-bottom: 0.5rem;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    height: 136px;
+  }
+
+  .flex {
+    padding: 0.5rem 0;
+  }
+
+  .flex p {
+    margin-left: 0.5rem;
+  }
+  #campaignsBar {
+    width: 175px;
+    height: 0.5rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+    margin-top: 8px;
+  }
+
+  #campaignsBarFull {
+    height: 0.5rem;
+  }
+  .indication {
+    font-size: 9px;
+    line-height: 10px;
+    color: #c4c4c4;
+  }
+  .first {
+    margin-left: 1.5rem !important;
+  }
+
+  .impressions {
+    padding-top: 1rem !important;
+  }
+
+}
+
+
+
+
+
+
+
+
 </style>

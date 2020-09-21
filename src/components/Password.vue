@@ -15,7 +15,7 @@
           <input type="text" required />
         </div>
       </div>
-      <input type="submit" value="Update password" />
+      <input type="submit" value="Update" />
     </form>
   </div>
 </template>
@@ -34,10 +34,7 @@
   line-height: 20px;
   color: #585858;
 }
-p {
-  margin-top: 0px;
-  margin-left: 2rem;
-}
+
 .icon-site {
   display: flex;
   margin-left: 1rem;
@@ -45,15 +42,6 @@ p {
 
 .icon-site h3 {
   padding-left: 1.5rem;
-}
-
-span {
-  color: black;
-  padding-left: 1rem;
-}
-
-.subheadline {
-  border: 1px solid #c4c4c4;
 }
 
 .password-area {
@@ -84,4 +72,41 @@ input[type="submit"] {
   border-radius: 20px;
   border: none;
 }
+
+input[type="submit"]:hover {
+  transform: scale(1.1) perspective(1px);
+}
+
+/*responsiveness*/
+@media (max-width: 576px) {
+  .site-info {
+    width: 300px;
+    padding-bottom: 0.5rem;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    height: 136px;
+  }
+  .password-area {
+    margin-left: 0.5rem;
+  }
+  label {
+    margin: 0.55rem 0;
+    width: 110%;
+  }
+  input[type="text"] {
+    width: 80%;
+    margin: 0.5rem 1rem;
+  }
+  input[type="submit"] {
+    margin-left: 75%;
+    height: 20px;
+    background: #ffffff;
+    box-shadow: 1px 1px 12px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+  }
+}
+
 </style>

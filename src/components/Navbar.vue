@@ -60,11 +60,23 @@ svg {
 }
 
 .router-link-exact-active svg {
-  fill:#7b00b5;
+  fill: #7b00b5;
 }
 
 a.router-link-exact-active {
   background: white;
   border-radius: 15px 0 0 15px;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    width: 35px;
+    height: 800px;
+  }
+  .logo img {
+    width: 100%;
+    height: 100%;
+    margin-left: -3px;
+  }
 }
 </style>

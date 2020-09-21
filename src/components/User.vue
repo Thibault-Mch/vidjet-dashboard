@@ -14,7 +14,7 @@
       </section>
     </div>
 
-    <div class="grid">
+    <div class="flex">
       <div class="flex-column">
         <p>First name:</p>
         <p>Last name:</p>
@@ -23,23 +23,22 @@
 <!-- input fields -->
       <div class="flex-column">
         <input
-        type="text"
-        v-model="user.user.firstname"
-        v-on:change="editUser"
+          type="text"
+          v-model="user.user.firstname"
+          v-on:change="editUser"
         />
 
         <input
-        type="text"
-        v-model="user.user.lastname"
-        v-on:change="editUser"
+          type="text"
+          v-model="user.user.lastname"
+          v-on:change="editUser"
         />
 
         <input
-        type="text"
-        v-model="user.user.email"
-        v-on:change="editUser"
+          type="text"
+          v-model="user.user.email"
+          v-on:change="editUser"
         />
-
       </div>
     </div>
   </div>
@@ -111,7 +110,31 @@ input:nth-child(1) {
   flex-direction: column;
 }
 
-.grid {
+.flex {
   display: flex;
 }
+
+@media (max-width: 576px) {
+  .user-info {
+    width: 300px;
+    padding-bottom: 0.5rem;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  input {
+    font-size: 12px;
+    margin: 4.5px 0.5rem;
+    width: 80%;
+  }
+
+  input:nth-child(1) {
+    margin-top: 0;
+  }
+  p {
+    margin-left: 0.5rem;
+  }
+}
+
 </style>

@@ -71,6 +71,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .credit-card {
   position: relative;
   width: 575px;
@@ -88,6 +89,10 @@ export default {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+.button-pen:hover {
+  transform: scale(1.15) perspective(1px);
 }
 
 .grid-container {

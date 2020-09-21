@@ -14,7 +14,7 @@
         <img src="../assets/red-cross.svg" alt="red-cross" />
       </section>
     </div>
-    <div class="grid">
+    <div class="flex">
       <div class="flex-column">
         <p>Website URL:</p>
         <p>Company name:</p>
@@ -109,8 +109,33 @@ input:nth-child(1) {
   flex-direction: column;
 }
 
-.grid {
+.flex {
   display: flex;
+}
+/*respnsive for mobiles*/
+@media (max-width: 576px) {
+  .site-info {
+    width: 300px;
+    padding-bottom: 0.5rem;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  input {
+    font-size: 12px;
+    color: black;
+    margin: 4.5px 0.5rem;
+    width: 80%;
+  }
+
+  input:nth-child(1) {
+    margin-top: 0;
+  }
+  p {
+    width: 100%;
+    margin-left: 0.5rem;
+  }
 }
 </style>
 

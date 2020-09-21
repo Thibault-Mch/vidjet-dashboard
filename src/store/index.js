@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import Api from "@/api/api";
 import userModule from './user';
 import siteModule from './site';
 import usageModule from './usage';
@@ -16,18 +15,5 @@ export default new Vuex.Store({
     site: siteModule,
     invoices: invoicesModule,
     creditCards: creditCardsModule
-  },
-
-  state: {
-    creditCards: []
-  },
-  mutations: {
-
-  },
-  actions: {
-    async loadCreditCards({commit}) {
-      let res = await Api().get('/creditCards');
-      commit("SET_CREDITCARDS", res.data);
-    }
   }
 });
