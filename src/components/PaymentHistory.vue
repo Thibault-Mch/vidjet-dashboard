@@ -15,7 +15,7 @@
       <p>Payment</p>
     </div>
     <div
-      v-for="item in invoices"
+      v-for="item in invoices.invoices"
       v-bind:key="item.id"
       style="display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr; text-align: center; border: 1px solid #DCDBDB;

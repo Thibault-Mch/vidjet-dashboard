@@ -7,7 +7,7 @@
     </div>
     <!-- display green check or red cross based on empty fields -->
     <div class="check-icon">
-      <section v-if="site.websiteUrl && site.companyName && site.address">
+      <section v-if="site.site.websiteUrl && site.site.companyName && site.site.address">
         <img src="../assets/green-check.svg" alt="green-check" />
       </section>
       <section v-else>
@@ -23,20 +23,17 @@
       <div class="flex-column">
         <input
         type="text"
-        v-model="site.websiteUrl"
-        :placeholder="site.websiteUrl"
+        v-model="site.site.websiteUrl"
         v-on:change="editSite"
         />
         <input
         type="text"
-        v-model="site.companyName"
-        :placeholder="site.companyName"
+        v-model="site.site.companyName"
         v-on:change="editSite"
         />
         <input
         type="text"
-        v-model="site.address"
-        :placeholder="site.address.substring(0, 30)"
+        v-model="site.site.address"
         v-on:change="editSite"
         />
       </div>
@@ -55,7 +52,7 @@ export default {
 
   methods: {
     async editSite() {
-      await this.$store.dispatch("editSite", this.site);
+      await this.$store.dispatch("editSite", this.site.site);
     }
   }
 };

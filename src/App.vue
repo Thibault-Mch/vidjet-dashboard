@@ -23,11 +23,11 @@ export default {
     Navbar
   },
   mounted() {
-    this.$store.dispatch('loadUser');
-    this.$store.dispatch('loadSite');
-    this.$store.dispatch('loadUsage');
-    this.$store.dispatch('loadInvoices');
-    this.$store.dispatch('loadCreditCards');
+    this.$store.dispatch('user/loadUser');
+    this.$store.dispatch('site/loadSite');
+    this.$store.dispatch('usage/loadUsage');
+    this.$store.dispatch('invoices/loadInvoices');
+    this.$store.dispatch('creditCards/loadCreditCards');
   }
 };
 </script>

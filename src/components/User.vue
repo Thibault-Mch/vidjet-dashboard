@@ -6,7 +6,7 @@
     </div>
     <!-- display green check or red cross based on empty fields -->
     <div class="check-icon">
-      <section v-if="user.firstname && user.lastname && user.email">
+      <section v-if="user.user.firstname && user.user.lastname && user.user.email">
         <img src="../assets/green-check.svg" alt="green-check" />
       </section>
       <section v-else>
@@ -24,22 +24,19 @@
       <div class="flex-column">
         <input
         type="text"
-        v-model="user.firstname"
-        :placeholder="user.firstname"
+        v-model="user.user.firstname"
         v-on:change="editUser"
         />
 
         <input
         type="text"
-        v-model="user.lastname"
-        :placeholder="user.lastname"
+        v-model="user.user.lastname"
         v-on:change="editUser"
         />
 
         <input
         type="text"
-        v-model="user.email"
-        :placeholder="user.email"
+        v-model="user.user.email"
         v-on:change="editUser"
         />
 
@@ -58,7 +55,7 @@ export default {
 
   methods: {
     async editUser() {
-      await this.$store.dispatch("editUser", this.user);
+      await this.$store.dispatch("user/editUser", this.user.user);
     }
   }
 };

@@ -5,7 +5,7 @@
         <img src="../assets/credit-card.svg" alt="usage-icon" />
         <h3>Credit card information</h3>
       </div>
-      <div v-for="item in creditCards.cards" v-bind:key="item.id">
+      <div v-for="item in creditCards.creditCards.cards" v-bind:key="item.id">
         <div class="inline">
           <p>{{ item.type }}</p>
           <p>

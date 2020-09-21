@@ -6,7 +6,7 @@
     </div>
     <div class="check-icon">
       <section
-        v-if="usage.campaigns < 3 || usage.impressions < usage.maxImpressions"
+        v-if="usage.usage.campaigns < 3 || usage.usage.impressions < usage.usage.maxImpressions"
       >
         <img src="../assets/green-check.svg" alt="green-check" />
       </section>
@@ -26,11 +26,11 @@
           <div id="campaignsBar">
             <div
               id="campaignsBarFull"
-              :style="{ width: (usage.campaigns / 3) * 100 + '%' }"
+              :style="{ width: (usage.usage.campaigns / 3) * 100 + '%' }"
             ></div>
           </div>
           <p class="indication">
-            {{ usage.campaigns }} out of 3 included in your plan
+            {{ usage.usage.campaigns }} out of 3 included in your plan
           </p>
         </div>
 
@@ -39,12 +39,12 @@
             <div
               id="campaignsBarFull"
               :style="{
-                width: (usage.impressions / usage.maxImpressions) * 100 + '%'
+                width: (usage.usage.impressions / usage.usage.maxImpressions) * 100 + '%'
               }"
             ></div>
           </div>
           <p class="indication">
-            {{ usage.impressions }} out of {{ usage.maxImpressions }} included
+            {{ usage.usage.impressions }} out of {{ usage.usage.maxImpressions }} included
             in your plan
           </p>
         </div>
