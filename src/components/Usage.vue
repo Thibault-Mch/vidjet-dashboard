@@ -68,6 +68,7 @@ export default {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   width: 450px;
+  height: 180px;
   padding-bottom: 0.5rem;
   font-style: normal;
   font-weight: 500;
@@ -148,13 +149,13 @@ p:nth-child(-n + 2) {
 /*responsiveness*/
 @media (max-width: 576px) {
   .site-info {
-    width: 300px;
+    width: 350px;
+    height: 136px;
     padding-bottom: 0.5rem;
     font-style: normal;
     font-weight: 300;
     font-size: 12px;
     line-height: 16px;
-    height: 136px;
   }
 
   .flex {

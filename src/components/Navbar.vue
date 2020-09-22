@@ -68,7 +68,7 @@ a.router-link-exact-active {
   border-radius: 15px 0 0 15px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .navbar {
     width: 35px;
     height: 800px;

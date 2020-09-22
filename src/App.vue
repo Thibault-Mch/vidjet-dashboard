@@ -52,6 +52,7 @@ input {
 
 #app {
   font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
 }
 .container {
   width: 1040px;
@@ -95,32 +96,22 @@ input {
 }
 
 /*responsiveness*/
-
-
 @media (max-width: 576px) {
-
-  #app {
-    margin-left: 10%;
-  }
-
   .link.account {
     font-size: 12px;
     line-height: 22px;
     width: 90px !important;
     height: 25px !important;
     margin: 0 auto;
-
   }
   #nav {
-    width: 300px;
-    margin-bottom: 2rem;
+    width: 350px;
+    margin: 0 auto 2rem auto;
     display: flex;
-    margin-left: -8px;
 }
   .container {
     width: 350px;
   }
 }
-
 
 </style>

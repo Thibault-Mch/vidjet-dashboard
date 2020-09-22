@@ -65,6 +65,7 @@ export default {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   width: 450px;
+  max-height: 180px;
   padding-bottom: 0.5rem;
   font-style: normal;
   font-weight: 500;
@@ -116,7 +117,7 @@ input:nth-child(1) {
 
 @media (max-width: 576px) {
   .user-info {
-    width: 300px;
+    width: 350px;
     padding-bottom: 0.5rem;
     font-style: normal;
     font-weight: 300;

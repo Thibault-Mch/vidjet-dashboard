@@ -23,22 +23,24 @@
     <transition name="slide" appear>
       <div class="modal" v-if="showModal">
         <!-- modal disapear on back or on save if all fields are filled -->
-        <form @submit="showModal = false">
+        <form class="form" @submit="showModal = false">
           <h1>Add a new credit card</h1>
-          <div class="cardholder-name">
-            <p>Cardholder name</p>
-            <input type="text" required />
-          </div>
-          <div class="card-number">
-            <p>Card number</p>
-            <input type="text" required />
-          </div>
-          <div class="date-cvc">
-            <p>Exp date</p>
+          <div class="credit-card-form">
+            <div class="cardholder-name">
+              <p>Cardholder name</p>
+              <input type="text" required />
+            </div>
+            <div class="card-number">
+              <p>Card number</p>
+              <input type="text" required />
+            </div>
+            <div class="date-cvc">
+              <p>Exp date</p>
 
-            <input type="text" required />
-            <p>CVC</p>
-            <input type="text" required />
+              <input type="text" required />
+              <p>CVC</p>
+              <input type="text" required />
+            </div>
           </div>
           <div class="buttons">
             <button class="button-back" @click="showModal = false">
@@ -71,7 +73,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .credit-card {
   position: relative;
   width: 575px;
@@ -101,19 +102,23 @@ export default {
   grid-gap: 30px;
 }
 .invoice {
-    width: 575px;
-  }
+  width: 575px;
+}
+
+p {
+  width: 100%;
+}
 
 /*responsive*/
-@media (min-width: 800px) {
+@media (min-width: 576px) {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 0.7fr;
     grid-gap: 16px 16px;
     grid-template-areas:
-    ". big-card"
-    ". big-card";
+      ". big-card"
+      ". big-card";
   }
   .big-card {
     grid-area: big-card;
@@ -123,25 +128,50 @@ export default {
   }
 }
 
-
 /*Modal styling*/
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+
+  width: 625px;
+  height: 330px;
+  background-color: #fff;
+  box-shadow: 0px 0px 250px 100px rgba(0, 0, 0, 0.2), inset 0px 0px 10px 3px #DFDFDF;
+  border-radius: 7px;
+}
+
+h1 {
+  margin-top: 2.1rem;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #585858;
+}
+
+p {
+  width: auto;
+  font-size: 16px;
+  line-height: 20px;
+  color: #585858;
+}
+
+input {
+  height: 20px;
+  font-size: 16px;
+}
+
+.credit-card-form {
+  margin: 1.5rem auto 1.5rem auto;
+  width: 500px;
+}
+
 .buttons {
   display: flex;
   justify-content: space-around;
-}
-
-/*save button*/
-input[type="submit"] {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  background: #ffffff;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.18);
-  border-radius: 20px;
-  padding: 0 1rem;
-  height: 29.5px;
 }
 
 .cardholder-name {
@@ -151,7 +181,7 @@ input[type="submit"] {
 .cardholder-name input {
   margin-top: 12px;
   margin-left: 1rem;
-  width: 63%;
+  width: 320px;
   border: none;
   border-bottom-color: currentcolor;
   border-bottom-style: none;
@@ -166,7 +196,7 @@ input[type="submit"] {
 .card-number input {
   margin-top: 12px;
   margin-left: 45px;
-  width: 63%;
+  width: 330px;
   border: none;
   border-bottom-color: currentcolor;
   border-bottom-style: none;
@@ -179,15 +209,55 @@ input[type="submit"] {
 }
 
 .date-cvc input {
+  width: 160px;
   margin-top: 12px;
   margin-left: 1rem;
   margin-right: 1rem;
-  width: 25%;
   border: none;
   border-bottom-color: currentcolor;
   border-bottom-style: none;
   border-bottom-width: medium;
   border-bottom: 1px solid #585858;
+}
+
+
+/*save button*/
+input[type="submit"] {
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  background: #ffffff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+  padding: 0 1rem;
+  height: 36px;
+  width: 86px;
+}
+input[type="submit"]:hover {
+  transform: scale(1.15) perspective(1px);
+}
+
+.button-back {
+  font-size: 14px;
+  font-weight: 300;
+  appearance: none;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  background: #ffffff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.18);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  height: 36px;
+  width: 86px;
+}
+.button-back:hover {
+  transform: scale(1.15) perspective(1px);
 }
 
 .modal-overlay {
@@ -198,40 +268,6 @@ input[type="submit"] {
   bottom: 0;
   z-index: 98;
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-
-  width: 100%;
-  max-width: 400px;
-  background-color: #fff;
-  border-radius: 16px;
-
-  padding: 1rem 2rem 2rem 2rem;
-}
-
-h1 {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  align-items: center;
-  text-align: center;
-  color: #585858;
-}
-
-p {
-  font-size: 16px;
-  line-height: 20px;
-  color: #585858;
-}
-
-input {
-  height: 20px;
 }
 
 .fade-enter-active,
@@ -253,19 +289,5 @@ input {
 .slide-leave-to {
   transform: translateY(-50%) translateX(100vw);
 }
-
-.button-back {
-  appearance: none;
-  outline: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-  background: #ffffff;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.18);
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-}
-
-
 
 </style>

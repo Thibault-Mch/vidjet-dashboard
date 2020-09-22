@@ -106,4 +106,20 @@ export default {
   box-sizing: border-box;
   border-radius: 5px;
 }
+
+/*responsive*/
+
+@media (max-width: 576px) {
+  .payment-history {
+    width: 334px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #585858;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+  .payment-header {
+    vertical-align: sub;
+  }
+}
+
 </style>

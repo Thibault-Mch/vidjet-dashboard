@@ -64,6 +64,7 @@ export default {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
   width: 450px;
+  max-height: 180px;
   padding-bottom: 0.5rem;
   font-weight: 500;
   font-size: 16px;
@@ -115,7 +116,8 @@ input:nth-child(1) {
 /*respnsive for mobiles*/
 @media (max-width: 576px) {
   .site-info {
-    width: 300px;
+    width: 350px;
+    height: 136px;
     padding-bottom: 0.5rem;
     font-style: normal;
     font-weight: 300;

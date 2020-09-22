@@ -31,7 +31,7 @@ export default {
   grid-template-columns: 1fr;
   grid-gap: 30px;
 }
-@media (min-width: 800px) {
+@media (min-width: 576px) {
   .card-flex {
     grid-template-columns: repeat(2, 1fr);
   }

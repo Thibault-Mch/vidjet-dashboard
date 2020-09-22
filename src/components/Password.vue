@@ -1,6 +1,6 @@
 <template>
-  <div class="site-info">
-    <div class="icon-site">
+  <div class="password-info">
+    <div class="icon-password">
       <img src="../assets/password.svg" alt="password-icon" />
       <h3>Change password</h3>
     </div>
@@ -23,24 +23,26 @@
 <script></script>
 
 <style scoped>
-.site-info {
+.password-info {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
-  width: 450px;
+  max-width: 450px;
+  max-height: 180px;
   padding-bottom: 0.5rem;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #585858;
+  position: relative;
 }
 
-.icon-site {
+.icon-password {
   display: flex;
   margin-left: 1rem;
 }
 
-.icon-site h3 {
+.icon-password h3 {
   padding-left: 1.5rem;
 }
 
@@ -65,12 +67,14 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  margin-left: 65%;
   height: 30px;
   background: #ffffff;
   box-shadow: 1px 1px 12px -1px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   border: none;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
 }
 
 input[type="submit"]:hover {
@@ -79,14 +83,14 @@ input[type="submit"]:hover {
 
 /*responsiveness*/
 @media (max-width: 576px) {
-  .site-info {
-    width: 300px;
+  .password-info {
+    width: 350px;
+    height: 136px;
     padding-bottom: 0.5rem;
     font-style: normal;
     font-weight: 300;
     font-size: 12px;
     line-height: 16px;
-    height: 136px;
   }
   .password-area {
     margin-left: 0.5rem;
