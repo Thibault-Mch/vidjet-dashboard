@@ -78,7 +78,6 @@ export default {
   color: #585858;
   padding: 0 1rem 1rem 1rem;
   max-height: 300px;
-  min-height: 300px;
   overflow: auto;
 }
 
@@ -111,14 +110,16 @@ export default {
 
 @media (max-width: 576px) {
   .payment-history {
-    width: 334px;
+    width: 384px;
+    height: 250px;
     font-size: 12px;
     line-height: 16px;
     color: #585858;
     padding: 0 0.5rem 0.5rem 0.5rem;
   }
   .payment-header {
-    vertical-align: sub;
+    line-height: 12px;
+    align-items: center;
   }
 }
 

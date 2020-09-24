@@ -6,7 +6,7 @@
     </div>
     <div class="check-icon">
       <section
-        v-if="usage.usage.campaigns < 3 || usage.usage.impressions < usage.usage.maxImpressions"
+        v-if="usage.usage.campaigns < 3 && usage.usage.impressions > usage.usage.maxImpressions"
       >
         <img src="../assets/green-check.svg" alt="green-check" />
       </section>
@@ -44,8 +44,9 @@
             ></div>
           </div>
           <p class="indication">
-            {{ usage.usage.impressions }} out of {{ usage.usage.maxImpressions }} included
-            in your plan
+            {{ usage.usage.impressions }} out of
+            {{ usage.usage.maxImpressions }}
+            included in your plan
           </p>
         </div>
       </div>
@@ -149,7 +150,7 @@ p:nth-child(-n + 2) {
 /*responsiveness*/
 @media (max-width: 576px) {
   .site-info {
-    width: 350px;
+    width: 400px;
     height: 136px;
     padding-bottom: 0.5rem;
     font-style: normal;
@@ -163,18 +164,18 @@ p:nth-child(-n + 2) {
   }
 
   .flex p {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
   #campaignsBar {
-    width: 175px;
-    height: 0.5rem;
+    width: 225px;
+    height: 1rem;
     border-radius: 10px;
     margin-left: 1rem;
-    margin-top: 8px;
+    margin-top: 4px;
   }
 
   #campaignsBarFull {
-    height: 0.5rem;
+    height: 1rem;
   }
   .indication {
     font-size: 9px;
@@ -188,7 +189,6 @@ p:nth-child(-n + 2) {
   .impressions {
     padding-top: 1rem !important;
   }
-
 }
 
 

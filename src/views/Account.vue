@@ -27,9 +27,11 @@ export default {
 
 <style scoped>
 .card-flex {
+  justify-items: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 30px;
+  margin: auto 0;
 }
 @media (min-width: 576px) {
   .card-flex {

@@ -63,6 +63,23 @@ export default {
 
 span {
   color: black;
-  padding-right: 1rem;
+  /*padding-right: 1rem;*/
+}
+
+@media (max-width: 576px) {
+  .card-for-creditCard {
+    width: 400px;
+    padding: 0.5rem 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #585858;
+    position: relative;
+    align-items: center;
+  }
+  .inline {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+  }
 }
 </style>
+

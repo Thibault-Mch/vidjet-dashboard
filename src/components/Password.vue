@@ -26,7 +26,7 @@
 .password-info {
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.12);
   border-radius: 10px;
-  max-width: 450px;
+  width: 450px;
   max-height: 180px;
   padding-bottom: 0.5rem;
   font-style: normal;
@@ -84,7 +84,7 @@ input[type="submit"]:hover {
 /*responsiveness*/
 @media (max-width: 576px) {
   .password-info {
-    width: 350px;
+    width: 400px;
     height: 136px;
     padding-bottom: 0.5rem;
     font-style: normal;
@@ -96,11 +96,11 @@ input[type="submit"]:hover {
     margin-left: 0.5rem;
   }
   label {
-    margin: 0.55rem 0;
+    margin: 0.55rem 1rem;
     width: 110%;
   }
   input[type="text"] {
-    width: 80%;
+    width: auto;
     margin: 0.5rem 1rem;
   }
   input[type="submit"] {

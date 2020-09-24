@@ -52,7 +52,7 @@ export default {
 
   methods: {
     async editSite() {
-      await this.$store.dispatch("editSite", this.site.site);
+      await this.$store.dispatch("site/editSite", this.site.site);
     }
   }
 };
@@ -116,7 +116,7 @@ input:nth-child(1) {
 /*respnsive for mobiles*/
 @media (max-width: 576px) {
   .site-info {
-    width: 350px;
+    width: 400px;
     height: 136px;
     padding-bottom: 0.5rem;
     font-style: normal;
@@ -128,7 +128,7 @@ input:nth-child(1) {
     font-size: 12px;
     color: black;
     margin: 4.5px 0.5rem;
-    width: 80%;
+    width: 120%;
   }
 
   input:nth-child(1) {
@@ -136,7 +136,7 @@ input:nth-child(1) {
   }
   p {
     width: 100%;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 }
 </style>

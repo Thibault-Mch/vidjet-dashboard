@@ -117,7 +117,7 @@ input:nth-child(1) {
 
 @media (max-width: 576px) {
   .user-info {
-    width: 350px;
+    width: 400px;
     padding-bottom: 0.5rem;
     font-style: normal;
     font-weight: 300;
@@ -127,14 +127,14 @@ input:nth-child(1) {
   input {
     font-size: 12px;
     margin: 4.5px 0.5rem;
-    width: 80%;
+    width: 120%;
   }
 
   input:nth-child(1) {
     margin-top: 0;
   }
   p {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
   }
 }
 

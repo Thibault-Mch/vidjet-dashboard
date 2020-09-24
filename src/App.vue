@@ -2,15 +2,7 @@
   <div class="navbar-and-cards">
     <Navbar />
     <div id="app">
-      <div class="container">
-        <h1 class="settings">Settings</h1>
-        <div id="nav">
-          <router-link class="link account" to="/account">Account</router-link>
-          <router-link class="link account" to="/integration">Integration</router-link>
-          <router-link class="link account" to="/billing">Billing</router-link>
-        </div>
         <router-view />
-      </div>
     </div>
   </div>
 </template>
@@ -36,11 +28,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 .navbar-and-cards {
-  display: grid;
-  grid-template-columns: 0.3fr 2.7fr;
-  grid-template-rows: 1fr;
-  grid-gap: 0px 16px;
-  grid-template-areas: ". . .";
+  display: flex;
 }
 
 html,
@@ -53,9 +41,6 @@ input {
 #app {
   font-family: "Montserrat", sans-serif;
   margin: 0 auto;
-}
-.container {
-  width: 1040px;
 }
 .settings {
   font-style: normal;
@@ -98,20 +83,18 @@ input {
 /*responsiveness*/
 @media (max-width: 576px) {
   .link.account {
-    font-size: 12px;
-    line-height: 22px;
-    width: 90px !important;
-    height: 25px !important;
+    font-size: 16px;
+    line-height: 35px;
+    width: 120px !important;
+    height: 35px !important;
     margin: 0 auto;
   }
   #nav {
-    width: 350px;
     margin: 0 auto 2rem auto;
     display: flex;
-}
-  .container {
-    width: 350px;
+    justify-content: space-between;
   }
+
 }
 
 </style>
