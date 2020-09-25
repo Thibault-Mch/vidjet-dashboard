@@ -21,7 +21,7 @@
       grid-template-columns: 1fr 1fr 1fr 1fr; text-align: center; border: 1px solid #DCDBDB;
       box-sizing: border-box;
       border-radius: 5px;
-      margin-bottom: 5px"
+      margin-bottom: 10px"
     >
       <p>${{ item.amount }}</p>
       <!-- if else for payment status -->
@@ -44,9 +44,9 @@
         <p>Failure</p>
       </section>
 
-      <p>{{ item.creationDate.substring(0, 10) }}</p>
+      <p>{{ formatedDates(item.creationDate) }}</p>
       <section v-if="item.paymentDate">
-        <p>{{ item.paymentDate.substring(0, 10) }}</p>
+        <p>{{ formatedDates(item.paymentDate) }}</p>
       </section>
       <section v-else>
         <p>-</p>
@@ -61,6 +61,13 @@ import { mapState } from "vuex";
 export default {
   computed: {
     ...mapState({invoices: 'invoices'})
+  },
+  methods: {
+    formatedDates(date) {
+      const invoicingDate = new Date(date);
+      const month = invoicingDate.toLocaleString('default', { month: 'short' });
+      return `${month}  ${date.substring(8,10)}, ${date.substring(0,4)} `;
+    }
   }
 };
 </script>

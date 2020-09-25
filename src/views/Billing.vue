@@ -34,10 +34,10 @@
               <p>Card number</p>
               <input type="text" required />
             </div>
+
             <div class="date-cvc">
               <p>Exp date</p>
-
-              <input type="text" required />
+              <input type="text" required class="date" v-on:keyup="addSlashBar"/>
               <p>CVC</p>
               <input type="text" required />
             </div>
@@ -69,6 +69,15 @@ export default {
     return {
       showModal: false
     };
+  },
+  methods: {
+    addSlashBar() {
+      let date = document.querySelector(".date");
+      console.log(date, date.length);
+      if (date.textLength == 2) {
+        date.value += "/";
+      }
+    }
   }
 };
 </script>
